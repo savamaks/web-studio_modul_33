@@ -1,6 +1,6 @@
 
 import '../styles/globals.css'
-import 'normalize.css'
+import 'normalize.css/normalize.css'
 import { AppProps } from 'next/app'
 
 export default function App({Component, pageProps}:AppProps){
