@@ -3,13 +3,13 @@ import Head from "next/head";
 import Navigation from "../navigation/navigation";
 import styles from "./layout.module.css";
 import Link from "next/link";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import clsx from "clsx";
 
 export default function Layout({ children }: PropsWithChildren) {
-    // const router = useRouter();
-    // const pathname = router.pathname ;
-    // console.log(pathname);
+    const router = useRouter();
+    const pathname = router.pathname;
+    console.log(pathname);
     return (
         <>
             <Head>
@@ -21,10 +21,7 @@ export default function Layout({ children }: PropsWithChildren) {
 
             <div className={styles.container}>
                 <header className={styles.header}>
-
-                    <Link href="/" className={styles.logo}>
-                        WEBSTUDIO
-                    </Link>
+                    <Link href="/" className={clsx(styles.logo, { [styles.disabled]: pathname === "/" })}></Link>
 
                     <Navigation />
                 </header>
